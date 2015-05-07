@@ -1,7 +1,7 @@
 plugin("quests",{
 	save: function(player,questName,questStatus){
-		this.store.players[player.name][questName] = questStatus
+		store.players[player.name][questName] = questStatus
 	} 
-})
+},true)
 
 // quests.store.players = quests.store.players || {}

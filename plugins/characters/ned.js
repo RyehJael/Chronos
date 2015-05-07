@@ -1,10 +1,19 @@
 /*
 /summon Villager ~ ~1 ~ {
-	CustomName:"Ned",CustomNameVisible:1,Profession:4,Career:1,CareerLevel:6,Attributes:[{
-		Name:generic.movementSpeed,Base:.001}],
-	Invulnerable:1,PersistenceRequired:1,Silent:1
+	CustomName:"Ned",
+	CustomNameVisible:1,
+	Profession:4,
+	Career:1,
+	CareerLevel:6,
+	Attributes:[{
+		Name:generic.movementSpeed,Base:.001
+	}],
+	Invulnerable:1,
+	PersistenceRequired:1,
+	Silent:1
 }
 */
+
 
 
 exports.interact = function(player){
