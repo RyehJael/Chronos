@@ -25,14 +25,12 @@ function newGame( event ){
   server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"<Ned>\",extra:[{text:\" Oh, good. You're awake.\",color:blue}]}");
   player.consoleCommand("tp @a[score_playtime_min=0,score_playtime=0] 325 66 -98")
 }
-events.connection( newGame );
+// events.connection( newGame );
 
 var arm_swings = 0
 function advance(event){
 	var player = event.player
-	echo(player, player.name);
 	arm_swings += 1
-	echo(player, arm_swings)
 
 	
 	

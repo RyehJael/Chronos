@@ -88,14 +88,22 @@ var blockTypes = {
 	"14:0[minecraft:gold_ore]" : { name: 'gold ore', xp: 175, skill: 'mining'},
 	"153:0[minecraft:quartz_ore]" : { name: 'quartz ore', xp: 100, skill: 'mining'},
 	"56:0[minecraft:diamond_ore]" : { name: 'diamond ore', xp: 200, skill: 'mining'},
-	"129:0[minecraft:emerald_ore]" : {name: 'emerald ore', xp: 350, skill: 'mining'}
+	"129:0[minecraft:emerald_ore]" : {name: 'emerald ore', xp: 350, skill: 'mining'},
+	"17:0[minecraft:log]" : {name: 'oak log', xp: 25, skill: 'woodcutting'},
+	"17:2[minecraft:log]" : {name: 'birch log', xp: 50, skill: 'woodcutting'},
+	"17:1[minecraft:log]" : {name: 'spruce log', xp: 100, skill: 'woodcutting'},
+	"17:3[minecraft:log]" : {name: 'jungle log', xp: 150, skill: 'woodcutting'},
+	"162:0[minecraft:log2]" : {name: 'acacia log', xp: 200, skill: 'woodcutting'},
+	"162:1[minecraft:log2]" : {name: 'dark oak log', xp: 300, skill: 'woodcutting'}
+
+
 }
 
 
 function blockDestroyHandler(event){
 	var player = event.player;
 	var block = event.block.getType().toString();
-	if (blockTypes[blockType] == undefined){
+	if (blockTypes[block] == undefined){
 		echo(player, block + ' is not mapped.')
 	} else {
 		var xp = blockTypes[block].xp
