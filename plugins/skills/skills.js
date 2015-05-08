@@ -94,7 +94,28 @@ var blockTypes = {
 	"17:1[minecraft:log]" : {name: 'spruce log', xp: 100, skill: 'woodcutting'},
 	"17:3[minecraft:log]" : {name: 'jungle log', xp: 150, skill: 'woodcutting'},
 	"162:0[minecraft:log2]" : {name: 'acacia log', xp: 200, skill: 'woodcutting'},
-	"162:1[minecraft:log2]" : {name: 'dark oak log', xp: 300, skill: 'woodcutting'}
+	"162:1[minecraft:log2]" : {name: 'dark oak log', xp: 300, skill: 'woodcutting'},
+	"2:0[minecraft:grass]" : {name: 'grass block', xp: 10, skill: 'excavation'},
+	"3:0[minecraft:dirt]" : {name: 'dirt block', xp: 10, skill: 'excavation'},
+	"12:0[minecraft:sand]" : {name: 'sand', xp: 30, skill: 'excavation'},
+	"82:0[minecraft:clay]" : {name: 'clay', xp: 40, skill: 'excavation'},
+	"159:0[minecraft:stained_hardened_clay]" : {name: 'white clay', xp: 50, skill: 'excavation'},
+	"159:1[minecraft:stained_hardened_clay]" : {name: 'orange clay', xp: 50, skill: 'excavation'},
+	"159:2[minecraft:stained_hardened_clay]" : {name: 'magenta clay', xp: 50, skill: 'excavation'},
+	"159:3[minecraft:stained_hardened_clay]" : {name: 'light blue clay', xp: 50, skill: 'excavation'},
+	"159:4[minecraft:stained_hardened_clay]" : {name: 'yellow clay', xp: 50, skill: 'excavation'},
+	"159:5[minecraft:stained_hardened_clay]" : {name: 'lime green clay', xp: 50, skill: 'excavation'},
+	"159:6[minecraft:stained_hardened_clay]" : {name: 'pink clay', xp: 50, skill: 'excavation'},
+	"159:7[minecraft:stained_hardened_clay]" : {name: 'gray clay', xp: 50, skill: 'excavation'},
+	"159:8[minecraft:stained_hardened_clay]" : {name: 'light gray clay', xp: 50, skill: 'excavation'},
+	"159:9[minecraft:stained_hardened_clay]" : {name: 'cyan clay', xp: 50, skill: 'excavation'},
+	"159:10[minecraft:stained_hardened_clay]" : {name: 'purple clay', xp: 50, skill: 'excavation'},
+	"159:11[minecraft:stained_hardened_clay]" : {name: 'blue clay', xp: 50, skill: 'excavation'},
+	"159:12[minecraft:stained_hardened_clay]" : {name: 'brown clay', xp: 50, skill: 'excavation'},
+	"159:13[minecraft:stained_hardened_clay]" : {name: 'green clay', xp: 50, skill: 'excavation'},
+	"159:14[minecraft:stained_hardened_clay]" : {name: 'red clay', xp: 50, skill: 'excavation'},
+	"159:15[minecraft:stained_hardened_clay]" : {name: 'black clay', xp: 50, skill: 'excavation'},
+	"172:0[minecraft:hardened_clay]" : {name: 'hardened clay', xp: 50, skill: 'excavation'}
 
 
 }
