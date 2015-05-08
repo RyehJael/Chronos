@@ -17,6 +17,6 @@ function blockInteraction(event){
 
 
 
-events.blockRightClick(blockInteraction)
+// events.blockRightClick(blockInteraction)
 
 

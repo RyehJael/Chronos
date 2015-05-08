@@ -1,5 +1,7 @@
 var players = persist('players',{})
 
+var unmappedBlocks = persist('unmappedBlocks',[])
+
 var levels = mapLevels(1000,100);
 
 function mapLevels(maxLevel,modifier){
@@ -125,8 +127,20 @@ function blockDestroyHandler(event){
 	var player = event.player;
 	var block = event.block.getType().toString();
 	if (blockTypes[block] == undefined){
-		echo(player, block + ' is not mapped.')
+
+		// This helps keep track of what blocks can be mapped.
+		unmappedBlocks.push(block)
+		console.log(block + ' is not mapped.')
+
 	} else {
+
+		// This helps keep track of what blocks can be mapped.
+		// Remove eventually.
+		var index = unmappedBlocks.indexOf(block)
+		if ( index > -1 ){
+			unmappedBlocks.splice(index,1)
+		}
+
 		var xp = blockTypes[block].xp
 		var skill = blockTypes[block].skill
 		var name = blockTypes[block].name

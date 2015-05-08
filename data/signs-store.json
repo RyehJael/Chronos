@@ -2,12 +2,12 @@
   "menus": {
     "Arrow": [
       {
-        "world": "chronos",
-        "x": 300,
         "y": 68,
         "z": -76,
         "yaw": 0,
-        "pitch": 0
+        "world": "chronos",
+        "pitch": 0,
+        "x": 300
       }
     ]
   }

@@ -37,12 +37,12 @@ function advance(event){
 	
 
 }
-events.playerArmSwing( advance );
+// events.playerArmSwing( advance );
 
-events.on( Packages.net.canarymod.hook.player.PlayerArmSwingHook, function( evt, cancel ) { 
-  echo( evt.player, evt.player.name + ' Swung!');
-  this.unregister();
-} );
+// events.on( Packages.net.canarymod.hook.player.PlayerArmSwingHook, function( evt, cancel ) { 
+//   echo( evt.player, evt.player.name + ' Swung!');
+//   this.unregister();
+// } );
 
 
 
@@ -62,7 +62,7 @@ function slotChangeHandler(event){
 	echo(player,item)
 
 }
-events.heldItemChange( slotChangeHandler );
+// events.heldItemChange( slotChangeHandler );
 
 
 
