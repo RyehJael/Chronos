@@ -68,9 +68,8 @@ function addExperience(player,skill,experience){
 	players[player.name][skill] += experience
 	var endingLevel = level(players[player.name][skill])
 	if (startingLevel < endingLevel){
-		echo(player,startingLevel + ' : ' + endingLevel)
+		echo(player, 'You have reached ' + skill + ' level ' + endingLevel)
 	}
-	echo(player, endingLevel + ' : ' + players[player.name][skill])
 }
 
 
@@ -145,7 +144,6 @@ function blockDestroyHandler(event){
 		var skill = blockTypes[block].skill
 		var name = blockTypes[block].name
 		addExperience(player,skill, xp )
-		echo(player, name + ' : ' + xp)
 	}
 	
 }

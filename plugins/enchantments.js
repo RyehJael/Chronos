@@ -1,21 +1,25 @@
+var items = require('items')
+
+
 
 var enchantments = [
 	{
 		name: 'Cobble Collector',
 		description: 'Increases cobblestone collected 10%',
-		items: ['sword','axe','shovel','stick'],
+		items: ['pickaxe'],
 		hook: 'BlockDestroyHook',
 		handle: function(event) {
-					var number = Math.random()
-					console.log('random number :' + number)
-					if (number <= 0.1){
-						echo(event.player,'You found an extra cobblestone!')
-					}
+					var block = event.getBlock()
+					var blockId = event.getBlock().getTypeId()
+					if (blockId == 1){
+						var number = Math.random()
+						var player = event.getPlayer()
+						if (number <= 0.1){
+							player.inventory.addItem(4)
+						}
+					}					
 				}
-
 	}
-
-
 ]
 
 
