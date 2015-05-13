@@ -6,38 +6,41 @@
 
 
 function newGame( event ){
-  var player = event.player;
-  var score = event.player.score;
-  server.consoleCommand("scoreboard players add @a playtime 1");
-  server.consoleCommand("scoreboard players remove @a playtime 1");
-  server.consoleCommand("effect @a[score_playtime_min=0,score_playtime=0] night_vision 1000");
-  server.consoleCommand("effect @a[score_playtime_min=0,score_playtime=0] blindness 1000");
-  server.consoleCommand("tp @a[score_playtime_min=0,score_playtime=0] 325 67 -99");
-  sleep(200)
-  server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"\",extra:[{text:\" Welcome to Realms of Chronos. Before you begin your adventure, let's get to know a bit about you and help you get to know a bit about us.\",color:gold}]}");
-  sleep(500);
-  server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"\",extra:[{text:\"To continue a conversation during a cutscene, simply left click.\"}]}");
-  server.consoleCommand("scoreboard players set @a[score_playtime_min=0,score_playtime=0] playtime 1");
-  server.consoleCommand("");
-  server.consoleCommand("");
-  server.consoleCommand("");
-  server.consoleCommand("");
-  server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"<Ned>\",extra:[{text:\" Oh, good. You're awake.\",color:blue}]}");
-  player.consoleCommand("tp @a[score_playtime_min=0,score_playtime=0] 325 66 -98")
-}
-// events.connection( newGame );
+  var player = event.getPlayer();
+  if (event.isFirstConnection() == true) {
+  	player.addPotionEffect(BLINDNESS, 30, 1)
+  }
 
-var arm_swings = 0
+  // var score = event.player.score;
+  // server.consoleCommand("scoreboard players add @a playtime 1");
+  // server.consoleCommand("scoreboard players remove @a playtime 1");
+  // server.consoleCommand("effect @a[score_playtime_min=0,score_playtime=0] night_vision 1000");
+  // server.consoleCommand("effect @a[score_playtime_min=0,score_playtime=0] blindness 1000");
+  // server.consoleCommand("tp @a[score_playtime_min=0,score_playtime=0] 325 67 -99");
+  // sleep(200)
+  // server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"\",extra:[{text:\" Welcome to Realms of Chronos. Before you begin your adventure, let's get to know a bit about you and help you get to know a bit about us.\",color:gold}]}");
+  // sleep(500);
+  // server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"\",extra:[{text:\"To continue a conversation during a cutscene, simply left click.\"}]}");
+  // server.consoleCommand("scoreboard players set @a[score_playtime_min=0,score_playtime=0] playtime 1");
+  // server.consoleCommand("");
+  // server.consoleCommand("");
+  // server.consoleCommand("");
+  // server.consoleCommand("");
+  // server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"<Ned>\",extra:[{text:\" Oh, good. You're awake.\",color:blue}]}");
+  // player.consoleCommand("tp @a[score_playtime_min=0,score_playtime=0] 325 66 -98")
+}
+events.connection( newGame );
+
+
+var api = Packages.net.canarymod.api
+
 function advance(event){
 	var player = event.player
-	arm_swings += 1
-
-	
-	
-	
-
+	var location = new Packages.net.canarymod.api.world.position.Location(326,66,-99)
+	var warp = new Packages.net.canarymod.warp.Warp(location,'prison')
+	warp.warp(player)	
 }
-// events.playerArmSwing( advance );
+
 
 // events.on( Packages.net.canarymod.hook.player.PlayerArmSwingHook, function( evt, cancel ) { 
 //   echo( evt.player, evt.player.name + ' Swung!');

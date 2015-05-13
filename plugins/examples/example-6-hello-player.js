@@ -44,15 +44,15 @@ Source Code ...
 
 ***/
 
-var utils = require('utils');
-var greetings = require('./example-1-hello-module');
+// var utils = require('utils');
+// var greetings = require('./example-1-hello-module');
 
-command( 'hello-byname', function( parameters, sender ) {
-  var playerName = parameters[0];
-  var recipient = utils.player( playerName );
-  if ( recipient ) {
-    greetings.hello( recipient );
-  } else {
-    echo( sender, 'Player ' + playerName + ' not found.' );
-  }
-});
+// command( 'hello-byname', function( parameters, sender ) {
+//   var playerName = parameters[0];
+//   var recipient = utils.player( playerName );
+//   if ( recipient ) {
+//     greetings.hello( recipient );
+//   } else {
+//     echo( sender, 'Player ' + playerName + ' not found.' );
+//   }
+// });
