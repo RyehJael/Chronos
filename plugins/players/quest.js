@@ -1,7 +1,30 @@
-plugin("quests",{
-	save: function(player,questName,questStatus){
-		store.players[player.name][questName] = questStatus
-	} 
-},true)
+var quests = persist('quests',[])
 
-// quests.store.players = quests.store.players || {}
+
+
+var openQuest = {}
+openQuest['title'] = 'opening'
+openQuest['characters'] = ['Jim','Steve']
+openQuest['start'] = function(event){
+	console.log(event)
+}
+openQuest['steps'] = []
+
+openQuest['steps'].push()
+
+
+quests.push(openQuest)
+
+
+
+
+function readObject(object){
+	if (typeof object == 'object'){
+		for (var key in object){
+			readObject(object[key])
+		}
+	} else {
+		console.log(object)
+	}
+}
+

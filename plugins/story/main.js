@@ -5,11 +5,13 @@
 
 
 
-function newGame( event ){
+function newGame(event){
   var player = event.getPlayer();
-  if (event.isFirstConnection() == true) {
-  	player.addPotionEffect(BLINDNESS, 30, 1)
-  }
+  // if (event.isFirstConnection() == true) {
+  	console.log('passed')
+  	warp(player, 326,66,-99,'prison')
+  	player.addPotionEffect(Packages.net.canarymod.api.potion.PotionEffectType.BLINDNESS, 600, 1)
+  // }
 
   // var score = event.player.score;
   // server.consoleCommand("scoreboard players add @a playtime 1");
@@ -29,17 +31,15 @@ function newGame( event ){
   // server.consoleCommand("tellraw @a[score_playtime_min=0,score_playtime=0] {text:\"<Ned>\",extra:[{text:\" Oh, good. You're awake.\",color:blue}]}");
   // player.consoleCommand("tp @a[score_playtime_min=0,score_playtime=0] 325 66 -98")
 }
-events.connection( newGame );
 
 
-var api = Packages.net.canarymod.api
-
-function advance(event){
-	var player = event.player
-	var location = new Packages.net.canarymod.api.world.position.Location(326,66,-99)
-	var warp = new Packages.net.canarymod.warp.Warp(location,'prison')
+function warp(player,x,y,z,name){
+	var location = new Packages.net.canarymod.api.world.position.Location(x,y,z)
+	var warp = new Packages.net.canarymod.warp.Warp(location,name)
 	warp.warp(player)	
 }
+
+events.connection( newGame );
 
 
 // events.on( Packages.net.canarymod.hook.player.PlayerArmSwingHook, function( evt, cancel ) { 
