@@ -26,7 +26,6 @@ function createRecipe( recipe ){
       }
       rows.push( new cmRecipeRow(recipe.shape[i], rr) );
     }
-    // This line is erroring >> Corrected : changed rows to individual parameters
     switch(rows.length){
       case 1 :
         result = cmRecipe.createShapedRecipe( recipe.result, rows[0]);
