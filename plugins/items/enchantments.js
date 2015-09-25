@@ -37,7 +37,6 @@ function enchantmentHandler(event){
 	var item = event.player.getItemHeld()
 	var itemEnchants = getItemEnchantmentNames(item)
 	for (var i in itemEnchants){
-		console.log('hook name:' + hookName)
 		var enchantment = getEnchantment(itemEnchants[i],hookName)
 		if (enchantment){
 			enchantment.handle(event)

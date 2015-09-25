@@ -11,3 +11,9 @@ If you are a minecraft modder who wants to develop simple mods then the `plugins
 If you are a minecraft modder who wants to develop more complex mods or provide an API for other modders, then modules intended for use by plugins (your own or others) should probably be placed in the `modules` directory.
 
 The `lib` directory is reserved for use by ScriptCraft. If a module is considered essential for all, or adds significantly useful new functionality to ScriptCraft then it should be placed in the `lib` directory.
+
+
+## Recent Changes
+
+
+## Todo

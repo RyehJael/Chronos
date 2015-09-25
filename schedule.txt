@@ -1,0 +1,22 @@
+to do list:
+-item creation
+	-fish
+		
+
+-Battle system
+-skills
+	[
+	<mining
+	<fishing
+	health
+	magic
+	agility
+	<woodcutting
+	<excavation
+	farming
+	defense
+	strength
+	crafting
+	smithing
+	cooking
+	theiving]

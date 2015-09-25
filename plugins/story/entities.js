@@ -7,5 +7,5 @@ function NPCs( name, x, y, z ){
 	var result = EntityFactory.newNPC( name, location )
 }
 
-//Chronos NPCs
+//Chronos NPC
 NPCs('Chronos', 332, 65, -94)
