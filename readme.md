@@ -1,4 +1,19 @@
-# scriptcraft root directory
+# Chronos
+
+
+## Installing
+
+open a command line and run this command
+
+` npm install ` 
+
+
+
+## Recent Changes
+
+
+
+## To Do
 
 This directory contains the following subdirectories...
 
