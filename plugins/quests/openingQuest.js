@@ -17,13 +17,13 @@ exports.openingQuest = function(player){
       main.sleep(4000);
       echo(player, '<Chronos> ' + red + 'It is like a part of me has died.');
       main.sleep(4000);
-      echo(player, '<Chronos> ' + red + ' Wait. I... Recognize you. But I have never seen you before.');
+      echo(player, '<Chronos> ' + red + 'Wait. I... Recognize you. But I have never seen you before.');
       main.sleep(4000);
-      echo(player, '<Chronos> ' + red + ' Who are you?!');
+      echo(player, '<Chronos> ' + red + 'Who are you?!');
       main.sleep(4000);
       echo(player, '<Chronos> ' + red + '...');
       main.sleep(2000);
-      echo(player, '<Chronos>' + red + ' You do not even know who you are. By entering my realm, you have lost yourself. All of your memories, everything you once were, is gone.');
+      echo(player, '<Chronos> ' + red + 'You do not even know who you are. By entering my realm, you have lost yourself. All of your memories, everything you once were, is gone.');
       main.sleep(6500);
       echo(player, '<Chronos> ' + red + 'I should kill you. Yet, there are too many unanswered questions for you to die now.');
       main.sleep(4000);

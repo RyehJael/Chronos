@@ -3,13 +3,8 @@ function opGamemode(event){
 	var isOp = event.player.isOperator()
 	if (isOp == true) {
 		player.setModeId(1);
-		player.setDisplayName('Op ' + player.name)
+		player.setDisplayName("\u00A76" + 'Op ' + player.name)
 	}	
 }
 
 events.connection(opGamemode);
-
-exports.speed = function(player) {
-	echo(player, 'speeding up');
-	player.setMotionX(20);
-}

@@ -29,7 +29,7 @@ var oQPrompt1 = function(player, oQProgress){
     	main.updateQuest(1, player.name, "openingQuest", "progress")
 		}, 20000);
 	var ned = mainCharacters.getCharacter("Ned");
-	echo(player, '(Choose a response by typing and entering the number in parentheses next to it or type \'q\' to leave this conversation.)');
+	echo(player, "(Choose a response by typing 'T' then input the number in parentheses next to it or type \'q\' to leave this conversation.)");
     echo(player, blue + '(1)' + reset + ' Thank you.');
     input( player, red + '(2)' + reset + ' I didn\'t need your help', function( input, repeat ) {
       	if ( input == 1 ) { 

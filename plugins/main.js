@@ -81,3 +81,12 @@ exports.sleep = function(milliseconds){
   var start = new Date().getTime();
   while (new Date().getTime() < start + milliseconds ){}
 }
+
+//to be erased
+var dataCheck = function(event){
+	var item = event.getItem();
+	var tag = item.getDataTag();
+	console.log(tag)
+
+}
+events.itemUse(dataCheck)

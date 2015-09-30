@@ -1,6 +1,7 @@
 
 var main = require('../main.js')
 var unmappedBlocks = persist('unmappedBlocks',[])
+var fishing = require("./fishing.js")
 
 exports.addExperience = function(player,skill,experience){
 	var hero = main.getHero(player.name).skills;
@@ -14,6 +15,36 @@ exports.addExperience = function(player,skill,experience){
 	main.updateHero(exp, player.name, 'skills', skill);
 }
 
+var acheivement = function(event){
+	player = event.player;
+	stat = event.getStat().getId().toString();
+	if (stat === "stat.fishCaught"){
+		fishing.fishCaught(player)
+	} else if (stat === "stat.playOneMinute" || stat === "stat.timeSinceDeath"){
+
+	} else if (stat === "stat.walkOneCm") {
+
+	} else if (stat === "stat.jump") {
+
+	} else if (stat === "stat.sprintOneCm") {
+
+	} else if (stat === "stat.diveOneCm") {
+
+	}else if (stat === "stat.swimOneCm") {
+
+	} else if (stat === "stat.climbOneCm") {
+
+	} else if (stat === "stat.flyOneCm") {
+
+	} else if (stat === "stat.crouchOneCm") {
+
+	}
+	 else {
+		// echo(player, stat)
+	}
+}
+events.statGained(acheivement);
+
 function xpBlock(event) {
 	this.cancel();
 }
@@ -21,8 +52,8 @@ events.experience(xpBlock)
 
 
 var blockTypes = {
-	"1:0[minecraft:stone]" : { name: 'stone', xp: 3, skill: 'mining', lvl: 0 },
-	"48:0[minecraft:mossy_cobblestone]" : { name: 'mossy cobblestone', xp: 3, skill: 'mining', lvl: 15 },
+	"1:0[minecraft:stone]" : { name: 'stone', xp: 3, skill: 'mining', lvl: 0, respawn: 2 },
+	"48:0[minecraft:mossy_cobblestone]" : { name: 'mossy cobblestone', xp: 3, skill: 'mining', lvl: 15, respawn: 2 },
 	"1:5[minecraft:stone]" : { name: 'andesite', xp: 5, skill: 'mining', lvl: 25},
 	"16:0[minecraft:coal_ore]" : { name: 'coal ore', xp: 90, skill: 'mining', lvl: 100},
 	"15:0[minecraft:iron_ore]" : {name: 'iron ore', xp: 200, skill: 'mining', lvl: 150},
@@ -37,12 +68,12 @@ var blockTypes = {
 	"168:0[minecraft:prismarine]" : {name: 'prismarine', xp: 4500, skill: 'mining', lvl: 800},
 	"56:0[minecraft:diamond_ore]" : { name: 'diamond ore', xp: 6000, skill: 'mining', lvl: 850},
 	"129:0[minecraft:emerald_ore]" : {name: 'emerald ore', xp: 10000, skill: 'mining', lvl: 950},
-	"17:0[minecraft:log]" : {name: 'oak log', xp: 25, skill: 'woodcutting', lvl: 0},
-	"17:2[minecraft:log]" : {name: 'birch log', xp: 50, skill: 'woodcutting', lvl: 0},
-	"17:1[minecraft:log]" : {name: 'spruce log', xp: 100, skill: 'woodcutting', lvl: 0},
-	"17:3[minecraft:log]" : {name: 'jungle log', xp: 150, skill: 'woodcutting', lvl: 0},
-	"162:0[minecraft:log2]" : {name: 'acacia log', xp: 200, skill: 'woodcutting', lvl: 0},
-	"162:1[minecraft:log2]" : {name: 'dark oak log', xp: 300, skill: 'woodcutting', lvl: 0},
+	"17:0[minecraft:log]" : {name: 'oak log', xp: 5, skill: 'woodcutting', lvl: 0, respawn: 2},
+	"17:2[minecraft:log]" : {name: 'birch log', xp: 50, skill: 'woodcutting', lvl: 150},
+	"17:1[minecraft:log]" : {name: 'spruce log', xp: 100, skill: 'woodcutting', lvl: 300},
+	"17:3[minecraft:log]" : {name: 'jungle log', xp: 150, skill: 'woodcutting', lvl: 500},
+	"162:0[minecraft:log2]" : {name: 'acacia log', xp: 200, skill: 'woodcutting', lvl: 650},
+	"162:1[minecraft:log2]" : {name: 'dark oak log', xp: 300, skill: 'woodcutting', lvl: 800},
 	"125:0[minecraft:double_wooden_slab]" : {name: 'double oak slab', xp: 0, skill: 'woodcutting', lvl: 0},
 	"2:0[minecraft:grass]" : {name: 'grass block', xp: 10, skill: 'excavation', lvl: 0},
 	"3:0[minecraft:dirt]" : {name: 'dirt block', xp: 10, skill: 'excavation', lvl: 0},
@@ -89,18 +120,20 @@ function blockDestroyHandler(event){
 		if ( index > -1 ){
 			unmappedBlocks.splice(index,1)
 		}
-		var xp = blockTypes[block].xp
-		var skill = blockTypes[block].skill
-		var name = blockTypes[block].name
-		var lvlReq = blockTypes[block].lvl
+		var xp = blockTypes[block].xp;
+		var skill = blockTypes[block].skill;
+		var name = blockTypes[block].name;
+		var lvlReq = blockTypes[block].lvl;
 		var hero = main.getHero(player.name).skills;
 		var mode = player.getModeId();
+		var respawn = blockTypes[block].respawn;
 		player.setExperience(hero[skill]);
 		if (player.getLevel() < blockTypes[block].lvl && mode == 2){
 			echo(player, "requires " + skill + " level " + lvlReq)
 			this.cancel()
-		} else {
+		} else if (mode == 2){
 			addExperience(player,skill, xp)
+    		this.cancel()
 		}
 	}
 	
