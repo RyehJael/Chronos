@@ -1,13 +1,13 @@
 
 var heroes = persist('heroes',{});
 var quests = persist('quests',{});
-var openingQuest = require('./quests/openingQuest.js');
+// var openingQuest = require('./quests/openingQuest.js');
 
 Game = {}
 
 
 
- Game.newGame = function(event) {
+Game.newGame = function(event) {
 	var player = event.getPlayer();
 	if (!quests[player.name]){
 		quests[player.name] = {};
@@ -20,14 +20,17 @@ Game = {}
 	}
 	if (!heroes[player.name].stats){
 		heroes[player.name].stats = {
+			maxHealth: 10,
 			health: 10,
 			mana: 10,
 			strength: 1,
 			defense: 1,
-			agility: 1
+			agility: 1,
+			armor: 0,
+			attack: 0
 		}
 	}
-    openingQuest.openingQuest(player);
+    // openingQuest.openingQuest(player);
 }
 
 Game.initialize = function(event){
